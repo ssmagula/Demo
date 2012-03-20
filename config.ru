@@ -1,5 +1,5 @@
-use Rack::Static, 
-  :urls => ["/assets/css", "/assets/img", "/assets/js", "/assets/ico", "/docs", "./"],
+use Rack::Static,
+  :urls => [/./],
   :root => "public/bootstrap/docs"
 
 run lambda { |env|
@@ -9,6 +9,6 @@ run lambda { |env|
       'Content-Type'  => 'text/html', 
       'Cache-Control' => 'public, max-age=86400' 
     },
-    File.open('public/bootstrap/docs/scaffolding.html', File::RDONLY)
+    File.open('public/bootstrap/docs/index.html', File::RDONLY)
   ]
 }

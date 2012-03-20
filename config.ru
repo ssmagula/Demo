@@ -2,6 +2,9 @@ use Rack::Static,
   :urls => ["/assets/css", "/assets/img", "/assets/js", "/assets/ico", "/docs"],
   :root => "public/bootstrap/docs"
 
+  :urls => ["./"],
+  :root => "public/bootstrap/docs"
+
 run lambda { |env|
   [
     200, 
